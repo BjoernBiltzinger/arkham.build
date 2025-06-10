@@ -9,6 +9,7 @@ import { useToast } from "./components/ui/toast.hooks";
 import { Connect } from "./pages/connect/connect";
 import { Error404 } from "./pages/errors/404";
 import { CardDataSync } from "./pages/settings/card-data-sync";
+import Wrapped from "./pages/wrapped/wrapped";
 import { useStore } from "./store";
 import { useSync } from "./store/hooks/use-sync";
 import { selectIsInitialized } from "./store/selectors/shared";
@@ -118,6 +119,7 @@ function AppInner() {
               <Route component={Share} path="/share/:id" />
               <Route component={CollectionStats} path="/collection-stats" />
               <Route component={Connect} path="/connect" />
+              <Route component={Wrapped} path="/wrapped" />
               <Route component={Error404} path="*" />
             </Switch>
             <RouteReset />

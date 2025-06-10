@@ -97,6 +97,13 @@ export function DeckCollection() {
 
   useHotkey("n", onNewDeck);
 
+  const onWrapped = useCallback(
+    (_evt: React.MouseEvent) => {
+      navigate("/wrapped");
+    },
+    [navigate],
+  );
+
   return (
     <div className={css["container"]}>
       <header className={css["header"]}>
@@ -145,6 +152,14 @@ export function DeckCollection() {
                   variant="bare"
                 >
                   <Trash2Icon /> {t("deck_collection.delete_all")}
+                </DropdownButton>
+                <DropdownButton
+                  data-testid="arkham-wrapped"
+                  onClick={onWrapped}
+                  size="full"
+                  variant="bare"
+                >
+                  <Trash2Icon /> {"Arkham Wrapped"}
                 </DropdownButton>
               </DropdownMenu>
             </PopoverContent>
